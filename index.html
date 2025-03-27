@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mola's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Mola<span>Jados</span></h1>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hey, I’m <span>Mola Jados</span></h1>
+                <p class="typed-text">Front-End Developer | UI/UX Enthusiast</p>
+                <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="myimage.jpeg" alt="Mola Jados" class="fade-in">
+                </div>
+                <div class="about-text">
+                    <h3>Front-End Developer & Creative Mind</h3>
+                    <p>I’m a passionate developer with over 3 years of experience crafting responsive, user-friendly web applications. I specialize in modern JavaScript frameworks like React and have a keen eye for UI/UX design.</p>
+                    <p>My mission? To build stunning digital experiences that blend elegant code with intuitive design. Let’s create something amazing together!</p>
+                    <a href="#" class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="html">
+                    <i class="fas fa-code"></i>
+                    <h3>HTML & CSS</h3>
+                    <p>Semantic HTML5 and modern CSS with Flexbox, Grid, and SASS.</p>
+                </div>
+                <div class="skill-card" data-skill="js">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>ES6+, DOM manipulation, and frameworks like React & Vue.js.</p>
+                </div>
+                <div class="skill-card" data-skill="react">
+                    <i class="fab fa-react"></i>
+                    <h3>React.js</h3>
+                    <p>Building SPAs with React, Redux, and modern tooling.</p>
+                </div>
+                <div class="skill-card" data-skill="uiux">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Wireframing and prototyping with Figma and Adobe XD.</p>
+                </div>
+                <div class="skill-card" data-skill="tools">
+                    <i class="fas fa-tools"></i>
+                    <h3>Dev Tools</h3>
+                    <p>Git, Webpack, Gulp, and deployment workflows.</p>
+                </div>
+                <div class="skill-card" data-skill="backend">
+                    <i class="fas fa-server"></i>
+                    <h3>Back-End Basics</h3>
+                    <p>Node.js, Express, MongoDB, and RESTful APIs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="tracker.gif" alt="Expense Tracker">
+                    <div class="project-info">
+                        <h3>Expense Tracker</h3>
+                        <p>A sleek app to manage finances with real-time updates and intuitive forms.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://127.0.0.1:5500/tracker%20expense/index.html" target="_blank" class="btn btn-small">Live Demo</a>
+                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="quiz.jpg" alt="Quiz Application">
+                    <div class="project-info">
+                        <h3>Quiz Application</h3>
+                        <p>An engaging quiz platform with timers and score tracking.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://127.0.0.1:5500/Advanced%20Quiz%20Application/index.html" target="_blank" class="btn btn-small">Live Demo</a>
+                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="3D.jpg" alt="3D Event Management">
+                    <div class="project-info">
+                        <h3>3D Event Management</h3>
+                        <p>A dynamic platform for events with 3D visuals and registration.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://127.0.0.1:5500/3D%20Event%20Management%20System/index.html" target="_blank" class="btn btn-small">Live Demo</a>
+                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="crop.jpg" alt="Crop Watering Reminder">
+                    <div class="project-info">
+                        <h3>Crop Watering Reminder</h3>
+                        <p>A tool for farmers to track crop watering schedules with reminders.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://127.0.0.1:5500/Crop%20Watering%20Reminder/index.html" target="_blank" class="btn btn-small">Live Demo</a>
+                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="cal.jpg" alt="Microloan Calculator">
+                    <div class="project-info">
+                        <h3>Microloan Calculator</h3>
+                        <p>A tool to calculate monthly payments for microfinance loans.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://127.0.0.1:5500/Microloan%20cal/index.html" target="_blank" class="btn btn-small">Live Demo</a>
+                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let’s Collaborate!</h3>
+                    <p>Have a project in mind or just want to chat? Reach out!</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>mljadama21@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+220 3141100</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Nema Kunku, WCR, Gambia</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p id="formMessage"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Mola<span>Jados</span></h2>
+                    <p>Crafting the future of the web.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Mola Jados. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
