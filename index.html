@@ -3,61 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mola's Portfolio</title>
+    <title>Mola Jados | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="logo">
-                <h1>Mola<span>Jados</span></h1>
+    <header>
+        <nav class="navbar" id="navbar" aria-label="Main Navigation">
+            <div class="container nav-flex">
+                <a href="#home" class="logo" aria-label="Homepage">
+                    <h1>Mola<span>Jados</span></h1>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#figma" class="nav-link">Figma Designs</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
             </div>
-            <div class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hey, I’m <span>Mola Jados</span></h1>
-                <p class="typed-text">Front-End Developer | UI/UX Enthusiast</p>
-                <a href="#projects" class="btn btn-primary">Explore My Work</a>
-                <div class="social-links">
-                    <a href="https://mljadama.github.io" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/modoulamin-jadama-b18978276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com/jadama_21?t=7YrWTUGqaP0Hp9dEzmZbHQ&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+        <div class="container hero-content">
+            <h1>Hi, I'm <span>Mola Jados</span></h1>
+            <p class="typed-text" aria-live="polite">Front-End Developer | UI/UX Enthusiast</p>
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <div class="social-links">
+                <a href="https://mljadama.github.io" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/modoulamin-jadama-b18978276" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/jadama_21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Mola.jpeg" alt="Mola Jados" class="fade-in">
-                </div>
-                <div class="about-text">
-                    <h3>Front-End Developer & Creative Mind</h3>
-                    <p>I’m a passionate developer with over 3 years of experience crafting responsive, user-friendly web applications. I specialize in modern JavaScript frameworks like React and have a keen eye for UI/UX design.</p>
-                    <p>My mission? To build stunning digital experiences that blend elegant code with intuitive design. Let’s create something amazing together!</p>
-                    <a href="cv.pdf" class="btn btn-secondary">Download CV</a>
-                </div>
+        <div class="container about-content">
+            <div class="about-image">
+                <img src="Mola.jpeg" alt="Mola Jados portrait" class="fade-in">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <h3>Front-End Developer & Creative Mind</h3>
+                <p>
+                    I’m a passionate developer with 3+ years experience crafting responsive, user-friendly web apps. 
+                    Specialized in React, modern JavaScript, and UI/UX design.
+                </p>
+                <p>
+                    My goal: Build stunning digital experiences that blend elegant code with intuitive design. Let’s create something amazing together!
+                </p>
+                <a href="cv.pdf" class="btn btn-secondary">Download CV</a>
             </div>
         </div>
     </section>
@@ -65,37 +69,70 @@
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card" data-skill="html">
+                <div class="skill-card">
                     <i class="fas fa-code"></i>
                     <h3>HTML & CSS</h3>
-                    <p>Semantic HTML5 and modern CSS with Flexbox, Grid, and SASS.</p>
+                    <p>Semantic HTML5, CSS Grid, Flexbox, SASS.</p>
                 </div>
-                <div class="skill-card" data-skill="js">
+                <div class="skill-card">
                     <i class="fab fa-js"></i>
                     <h3>JavaScript</h3>
-                    <p>ES6+, DOM manipulation, and frameworks like React & Vue.js.</p>
+                    <p>ES6+, DOM manipulation, React, Vue.js.</p>
                 </div>
-                <div class="skill-card" data-skill="react">
+                <div class="skill-card">
                     <i class="fab fa-react"></i>
                     <h3>React.js</h3>
-                    <p>Building SPAs with React, Redux, and modern tooling.</p>
+                    <p>SPAs, Redux, Hooks, Tooling.</p>
                 </div>
-                <div class="skill-card" data-skill="uiux">
+                <div class="skill-card">
                     <i class="fas fa-paint-brush"></i>
                     <h3>UI/UX Design</h3>
-                    <p>Wireframing and prototyping with Figma and Adobe XD.</p>
+                    <p>Wireframing, prototyping (Figma, Adobe XD).</p>
                 </div>
-                <div class="skill-card" data-skill="tools">
+                <div class="skill-card">
                     <i class="fas fa-tools"></i>
                     <h3>Dev Tools</h3>
-                    <p>Git, Webpack, Gulp, and deployment workflows.</p>
+                    <p>Git, Webpack, Gulp, CI/CD.</p>
                 </div>
-                <div class="skill-card" data-skill="backend">
+                <div class="skill-card">
                     <i class="fas fa-server"></i>
                     <h3>Back-End Basics</h3>
-                    <p>Node.js, Express, MongoDB, and RESTful APIs.</p>
+                    <p>Node.js, Express, MongoDB, REST APIs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Figma Section -->
+    <section class="section figma" id="figma">
+        <div class="container">
+            <h2 class="section-title">Figma Designs</h2>
+            <div class="figma-grid">
+                <div class="figma-card">
+                    <img src="figma1.jpg" alt="Mobile App UI Design" class="fade-in">
+                    <div class="figma-info">
+                        <h3>Mobile App UI</h3>
+                        <p>Modern mobile interface for easy navigation and user engagement.</p>
+                        <a href="https://www.figma.com/file/your-file-id-1" target="_blank" class="btn btn-small">View on Figma</a>
+                    </div>
+                </div>
+                <div class="figma-card">
+                    <img src="figma2.jpg" alt="Dashboard Concept" class="fade-in">
+                    <div class="figma-info">
+                        <h3>Dashboard Concept</h3>
+                        <p>Clean layout for analytics and business intelligence.</p>
+                        <a href="https://www.figma.com/file/your-file-id-2" target="_blank" class="btn btn-small">View on Figma</a>
+                    </div>
+                </div>
+                <div class="figma-card">
+                    <img src="figma3.jpg" alt="Landing Page UI" class="fade-in">
+                    <div class="figma-info">
+                        <h3>Landing Page UI</h3>
+                        <p>Promotional landing page with bold call-to-action.</p>
+                        <a href="https://www.figma.com/file/your-file-id-3" target="_blank" class="btn btn-small">View on Figma</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,13 +141,13 @@
     <!-- Projects Section -->
     <section class="section projects" id="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="tracker.gif" alt="Expense Tracker">
+                    <img src="tracker.gif" alt="Expense Tracker Demo">
                     <div class="project-info">
                         <h3>Expense Tracker</h3>
-                        <p>A sleek app to manage finances with real-time updates and intuitive forms.</p>
+                        <p>Manage finances with real-time updates and intuitive forms.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
@@ -121,10 +158,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="quiz.jpg" alt="Quiz Application">
+                    <img src="quiz.jpg" alt="Quiz Application Demo">
                     <div class="project-info">
                         <h3>Quiz Application</h3>
-                        <p>An engaging quiz platform with timers and score tracking.</p>
+                        <p>Engaging quiz platform with timers and score tracking.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
@@ -135,10 +172,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="3D.jpg" alt="3D Event Management">
+                    <img src="3D.jpg" alt="3D Event Management Demo">
                     <div class="project-info">
                         <h3>3D Event Management</h3>
-                        <p>A dynamic platform for events with 3D visuals and registration.</p>
+                        <p>Dynamic event platform with 3D visuals and registration.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
@@ -149,10 +186,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="crop.jpg" alt="Crop Watering Reminder">
+                    <img src="crop.jpg" alt="Crop Watering Reminder Demo">
                     <div class="project-info">
                         <h3>Crop Watering Reminder</h3>
-                        <p>A tool for farmers to track crop watering schedules with reminders.</p>
+                        <p>Track crop watering schedules with reminders for farmers.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
@@ -163,10 +200,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="cal.jpg" alt="Microloan Calculator">
+                    <img src="cal.jpg" alt="Microloan Calculator Demo">
                     <div class="project-info">
                         <h3>Microloan Calculator</h3>
-                        <p>A tool to calculate monthly payments for microfinance loans.</p>
+                        <p>Calculate monthly payments for microfinance loans.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
@@ -182,34 +219,23 @@
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let’s Collaborate!</h3>
-                    <p>Have a project in mind or just want to chat? Reach out!</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>mljadama21@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+220 3141100</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Nema Kunku, WCR, Gambia</p>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <p id="formMessage"></p>
-                </form>
+        <div class="container contact-content">
+            <div class="contact-info">
+                <h2 class="section-title">Get in Touch</h2>
+                <h3>Let’s Collaborate!</h3>
+                <p>Have a project or just want to chat? Reach out!</p>
+                <div class="contact-item"><i class="fas fa-envelope"></i> <span>mljadama21@gmail.com</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i> <span>+220 3141100</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Nema Kunku, WCR, Gambia</span></div>
             </div>
+            <form class="contact-form" id="contactForm" autocomplete="off">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <p id="formMessage"></p>
+            </form>
         </div>
     </section>
 
@@ -222,9 +248,9 @@
                     <p>Crafting the future of the web.</p>
                 </div>
                 <div class="footer-social">
-                    <a href="https://mljadama.github.io" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/modoulamin-jadama-b18978276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com/jadama_21?t=7YrWTUGqaP0Hp9dEzmZbHQ&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://mljadama.github.io" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/modoulamin-jadama-b18978276" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/jadama_21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <p class="copyright">© 2025 Mola Jados. All Rights Reserved.</p>
