@@ -1,80 +1,122 @@
-// Navbar Toggle
+// Responsive Navbar Toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  navToggle.classList.toggle('active');
 });
 
-// Smooth Scrolling
-document.querySelectorAll('.nav-link, .btn').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href');
-    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-    if (navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 60,
+          behavior: 'smooth'
+        });
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
     }
   });
 });
 
-// Navbar Scroll Effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-// Typing Animation for Hero
+// Typed Animation for Hero Text
 const typedText = document.querySelector('.typed-text');
-const textArray = ['Front-End Developer', 'UI/UX Enthusiast', 'Web Creator'];
-let textIndex = 0;
-let charIndex = 0;
+if (typedText) {
+  const phrases = [
+    'Front-End Developer | UI/UX Enthusiast',
+    'JavaScript & React Specialist',
+    'Creating Stunning Digital Experiences',
+    "Let's build something amazing!"
+  ];
+  let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
-function type() {
-  if (charIndex < textArray[textIndex].length) {
-    typedText.textContent += textArray[textIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, 100);
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    if (isDeleting) {
+      typedText.textContent = currentPhrase.substring(0, charIndex--);
+    } else {
+      typedText.textContent = currentPhrase.substring(0, charIndex++);
+    }
+    if (!isDeleting && charIndex === currentPhrase.length + 1) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(type, 600);
+    } else {
+      setTimeout(type, isDeleting ? 35 : 90);
+    }
+  }
+  type();
+}
+
+// Contact Form Submission (Demo: disables actual submission)
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    formMessage.textContent = 'Thank you for reaching out! I will get back to you soon.';
+    contactForm.reset();
+    setTimeout(() => {
+      formMessage.textContent = '';
+    }, 5000);
+  });
+}
+
+// Fade-In Animation for Images on Scroll
+function fadeInOnScroll() {
+  const fadeEls = document.querySelectorAll('.fade-in');
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      el.style.opacity = 1;
+    }
+  });
+}
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+
+// --- Existing JS remains above this comment ---
+
+// Dark Mode Toggle
+function setDarkMode(on) {
+  if (on) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'on');
+    toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    toggleBtn.setAttribute('aria-label', 'Switch to light mode');
   } else {
-    setTimeout(erase, 2000);
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'off');
+    toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
   }
 }
 
-function erase() {
-  if (charIndex > 0) {
-    typedText.textContent = textArray[textIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 50);
-  } else {
-    textIndex = (textIndex + 1) % textArray.length;
-    setTimeout(type, 500);
-  }
+// Insert toggle button into DOM
+const toggleBtn = document.createElement('button');
+toggleBtn.className = 'dark-mode-toggle';
+toggleBtn.type = 'button';
+toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
+toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+document.body.appendChild(toggleBtn);
+
+// Load dark mode preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const darkPref = localStorage.getItem('darkMode');
+if (darkPref === 'on' || (!darkPref && prefersDark)) {
+  setDarkMode(true);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(type, 1000);
-});
-
-// Contact Form Submission 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.querySelector('input[placeholder="Your Name"]').value;
-  const email = document.querySelector('input[placeholder="Your Email"]').value;
-  const subject = document.querySelector('input[placeholder="Subject"]').value;
-  const message = document.querySelector('textarea').value;
-  const formMessage = document.getElementById('formMessage');
-
-  if (name && email && subject && message) {
-    formMessage.textContent = 'Message sent successfully!';
-    formMessage.style.color = '#ff4d4d';
-    e.target.reset();
-    setTimeout(() => formMessage.textContent = '', 3000);
-  } else {
-    formMessage.textContent = 'Please fill out all fields.';
-    formMessage.style.color = '#fff';
-  }
+// Toggle dark mode on click
+toggleBtn.addEventListener('click', () => {
+  setDarkMode(!document.body.classList.contains('dark-mode'));
 });
